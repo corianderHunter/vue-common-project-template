@@ -1,15 +1,20 @@
 import Vue from 'vue'
 import App from './App'
-import router from './router'
 import elementUI from 'element-ui'
 
+import router from './router'
 import store from './store'
+import service from './service'
 
-import 'element-ui/lib/theme-chalk/index.css';
+import '@assets/styles/element-variables.scss'
+import '@assets/styles/normalize.css'
 
 Vue.config.productionTip = false
+Vue.use(elementUI);
 
-/* eslint-disable no-new */
+//挂载service
+Vue.prototype.$service = service;
+
 new Vue({
   el: '#app',
   router,
